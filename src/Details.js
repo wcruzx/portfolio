@@ -21,6 +21,7 @@ import projectImage2 from "./assets/projects/project2.jpg";
 import projectImage3 from "./assets/projects/project3.jpg";
 import projectImage4 from "./assets/projects/project4.jpg";
 import projectImage5 from "./assets/projects/project5.jpg";
+import projectImage6 from "./assets/projects/project6.jpg";
 
 export const navItems = [
   { label: "Home", href: "#home" },
@@ -135,6 +136,14 @@ export const projectDetails = [
     techstack: "Java, SpringBoot, Maven, Postman",
     previewLink: "https://github.com/wcruzx/findcep",
     githubLink: "https://github.com/wcruzx/findcep",
+  },
+  {
+    title: "Testes Manuais e Automatizados",
+    image: projectImage6,
+    description: `Teste Manuais e Automatizados nos principais portais e sistemas do municipio, garantindo a qualidade de entrega dos serviços ao cidadão.`,
+    techstack: "Selenium IDE",
+    previewLink: "https://www.campogrande.ms.gov.br/",
+    githubLink: "https://www.campogrande.ms.gov.br/",
   },
 ];
 
