@@ -42,6 +42,7 @@ export const personalDetails = {
 export const socialMediaUrl = {
   linkdein: "https://www.linkedin.com/in/weversoncruz",
   github: "https://github.com/wcruzx",
+  whatsapp: "https://wa.me/67991410218",
 };
 
 export const workDetails = [
@@ -114,6 +115,14 @@ export const projectDetails = [
     githubLink: "",
   },
   {
+    title: "Testes Manuais e Automatizados",
+    image: projectImage6,
+    description: `Teste Manuais e Automatizados nos principais portais e sistemas do municipio, garantindo a qualidade de entrega dos serviços ao cidadão.`,
+    techstack: "Selenium IDE",
+    previewLink: "https://www.campogrande.ms.gov.br/",
+    githubLink: "https://www.campogrande.ms.gov.br/",
+  },
+  {
     title: "Chess Game",
     image: projectImage2,
     description: `O Chess Game é uma aplicação de xadrez multijogador através do navegador Web`,
@@ -136,14 +145,6 @@ export const projectDetails = [
     techstack: "Java, SpringBoot, Maven, Postman",
     previewLink: "https://github.com/wcruzx/findcep",
     githubLink: "https://github.com/wcruzx/findcep",
-  },
-  {
-    title: "Testes Manuais e Automatizados",
-    image: projectImage6,
-    description: `Teste Manuais e Automatizados nos principais portais e sistemas do municipio, garantindo a qualidade de entrega dos serviços ao cidadão.`,
-    techstack: "Selenium IDE",
-    previewLink: "https://www.campogrande.ms.gov.br/",
-    githubLink: "https://www.campogrande.ms.gov.br/",
   },
 ];
 
