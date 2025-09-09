@@ -6,6 +6,8 @@ function Technologies() {
     html,
     css,
     js,
+    angular,
+    typescript,
     react,
     tailwind,
     java,
@@ -20,7 +22,10 @@ function Technologies() {
     postman,
   } = techStackDetails;
   return (
-    <main id="technologies" className="container mx-auto max-width pt-10 pb-20 ">
+    <main
+      id="technologies"
+      className="container mx-auto max-width pt-10 pb-20 "
+    >
       <section>
         <h1 className="text-2xl text-green-text md:text-4xl xl:text-5xl xl:leading-tight font-bold">
           Tech Stack
@@ -33,13 +38,14 @@ function Technologies() {
         <img src={html} title="html" alt="" />
         <img src={css} title="CSS" alt="" />
         <img src={js} title="JavaScript" alt="" />
+        <img src={typescript} title="Typescript" alt="" />
+        <img src={angular} title="Angular" alt="" />
         <img src={react} title="React" alt="" />
         <img src={tailwind} title="Tailwind CSS" alt="" />
         <img src={java} title="Java" alt="" />
         <img src={spring} title="Spring Boot" alt="" />
         <img src={csharp} title="C# (Csharp)" alt="" />
         <img src={net} title=".Net" alt="" />
-
       </section>
       <section>
         <h1 className="text-2xl pt-10 text-green-text md:text-4xl xl:text-5xl xl:leading-tight font-bold">
