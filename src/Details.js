@@ -113,7 +113,7 @@ export const projectDetails = [
   {
     title: "Sistema de Empreendedorismo Jurídico",
     image: projectImage7,
-    description: `Fomentar a inovação e a autonomia dos profissionais do direito, oferecendo um ambiente digital integrado para gestão de projetos, networking, desenvolvimento profissional e acesso a conteúdos da OAB/MS, promovendo a transformação digital no setor jurídico.`,
+    description: `Sistema com o objetivo de fomentar a inovação e a autonomia dos profissionais do direito, oferecendo um ambiente digital integrado para gestão de projetos, networking, desenvolvimento profissional e acesso a conteúdos da OAB/MS, promovendo a transformação digital no setor jurídico.`,
     techstack: "Angular, Typescript, HTML e CSS",
     previewLink: "https://sej.oabms.org.br/",
     githubLink: "",
