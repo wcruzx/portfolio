@@ -130,7 +130,7 @@ export const projectDetails = [
     title: "Sistema de Agendamento de Castração",
     image: projectImage5,
     description: `Durante a minha experiência profissional de estágio, participei da manutenção deste projeto.`,
-    techstack: "HTML/CSS, Java, PostgreSQL",
+    techstack: "HTML/CSS, Java, PostgresSQL",
     previewLink: "https://castracao.campogrande.ms.gov.br/",
     githubLink: "",
   },

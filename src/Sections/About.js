@@ -4,15 +4,20 @@ import { personalDetails, workDetails, eduDetails } from "../Details";
 
 function About() {
   return (
-    <main id= "about" className="container mx-auto max-width pt-10 pb-20 bg-color: dark-mode ">
+    <main
+      id="about"
+      className="container mx-auto max-width pt-10 pb-20 bg-color: dark-mode "
+    >
       <section>
         <h1 className="text-2xl text-green-text md:text-4xl xl:text-5xl xl:leading-tight font-bold">
           Sobre mim
         </h1>
-        <p className="text-content py-8 lg:max-w-3xl">{personalDetails.about}</p>
+        <p className="text-content py-8 lg:max-w-full">
+          {personalDetails.about}
+        </p>
       </section>
-      <section >
-        <h1  className="text-2xl text-green-text md:text-4xl xl:text-5xl xl:leading-tight font-bold">
+      <section>
+        <h1 className="text-2xl text-green-text md:text-4xl xl:text-5xl xl:leading-tight font-bold">
           Experiência profissional
         </h1>
         {React.Children.toArray(
