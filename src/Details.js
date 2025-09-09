@@ -15,6 +15,8 @@ import vscode from "./assets/techstack/vscode.png";
 import github from "./assets/techstack/github.png";
 import git from "./assets/techstack/git.png";
 import postman from "./assets/techstack/postman.png";
+import typescript from "./assets/techstack/typescript.png";
+import angular from "./assets/techstack/angular.png";
 
 import projectImage1 from "./assets/projects/project1.jpg";
 import projectImage2 from "./assets/projects/project2.jpg";
@@ -36,7 +38,7 @@ export const personalDetails = {
   name: "Wéverson Cruz",
   tagline: "Desenvolvo soluções para a Web",
   img: profile,
-  about: `Sou desenvolvedor de software, dedicado a contribuir na implementação de funcionalidades em sistemas, sempre motivado a trabalhar em equipe e participar ativamente.`,
+  about: `Graduado em Análise e Desenvolvimento de Sistemas e pós-graduado em Engenharia de Software, tenho experiência nas áreas de Suporte em Sistemas e Desenvolvimento de Software, com vivência em linguagens de programação, bancos de dados e testes de qualidade.`,
 };
 
 export const socialMediaUrl = {
@@ -48,10 +50,17 @@ export const socialMediaUrl = {
 export const workDetails = [
   {
     Position: "Software Developer",
+    Company: `Laboratório de Inovação e Tecnologia Jurídica da OAB/MS`,
+    Location: "Campo Grande - MS",
+    Type: "Integral",
+    Duration: "Março 2025 - Agosto 2025",
+  },
+  {
+    Position: "Software Developer",
     Company: `AGETEC - Agência Municipal de Tecnologia da Informação e Inovação`,
     Location: "Campo Grande - MS",
     Type: "Estágio",
-    Duration: "Abril 2024 - Atualmente",
+    Duration: "Abril 2024 - Dezembro 2024",
   },
   {
     Position: "Support and Systems Analyst",
@@ -64,18 +73,18 @@ export const workDetails = [
 
 export const eduDetails = [
   {
+    Position: "Pós Graduação – Engenharia de Software",
+    Company: `Anhanguera Educacional`,
+    Location: "Brasil",
+    Type: "Online",
+    Duration: "Março 2025 - Setembro 2025",
+  },
+  {
     Position: "Análise e Desenvolvimento de Sistemas",
     Company: "UNOPAR - Universidade Norte do Paraná",
     Location: "Brasil",
     Type: "EAD",
     Duration: "Jan 2022 - Dez 2024",
-  },
-  {
-    Position: "Explorer, Desenvolvimento Web",
-    Company: `Rocketseat`,
-    Location: "Brasil",
-    Type: "Online",
-    Duration: "Jan 2022 - Jul 2022",
   },
 ];
 
@@ -83,6 +92,8 @@ export const techStackDetails = {
   html: html,
   css: css,
   js: js,
+  typescript: typescript,
+  angular: angular,
   react: react,
   tailwind: tailwind,
   java: java,
@@ -98,6 +109,14 @@ export const techStackDetails = {
 };
 
 export const projectDetails = [
+  {
+    title: "Sistema de Empreendedorismo Jurídico",
+    image: projectImage7,
+    description: `Fomentar a inovação e a autonomia dos profissionais do direito, oferecendo um ambiente digital integrado para gestão de projetos, networking, desenvolvimento profissional e acesso a conteúdos da OAB/MS, promovendo a transformação digital no setor jurídico.`,
+    techstack: "Angular, Typescript, HTML e CSS",
+    previewLink: "https://sej.oabms.org.br/",
+    githubLink: "",
+  },
   {
     title: "Sistema Municipal de Gestão de Estágio",
     image: projectImage1,
@@ -125,7 +144,7 @@ export const projectDetails = [
   {
     title: "Chess Game",
     image: projectImage2,
-    description: `O Chess Game é uma aplicação de xadrez multijogador através do navegador Web`,
+    description: `O Chess Game é uma aplicação de xadrez multijogador através do navegador Web.`,
     techstack: "HTML/CSS, JavaScript, React, Node",
     previewLink: "https://github.com/wcruzx/chess-game",
     githubLink: "https://github.com/wcruzx/chess-game",
