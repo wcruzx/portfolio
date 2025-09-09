@@ -24,6 +24,7 @@ import projectImage3 from "./assets/projects/project3.jpg";
 import projectImage4 from "./assets/projects/project4.jpg";
 import projectImage5 from "./assets/projects/project5.jpg";
 import projectImage6 from "./assets/projects/project6.jpg";
+import projectImage7 from "./assets/projects/project7.jpg";
 
 export const navItems = [
   { label: "Home", href: "#home" },
