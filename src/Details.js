@@ -77,7 +77,7 @@ export const eduDetails = [
     Position: "Pós Graduação – Engenharia de Software",
     Company: `Anhanguera Educacional`,
     Location: "Brasil",
-    Type: "Online",
+    Type: "EAD",
     Duration: "Março 2025 - Setembro 2025",
   },
   {
