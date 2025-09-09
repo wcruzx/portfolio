@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "./static/css/main.766fd2eb.css",
-    "main.js": "./static/js/main.7e5cc114.js",
-    "static/media/profile.png": "./static/media/profile.1bcab5a4c018447d26da.png",
-    "static/media/project6.jpg": "./static/media/project6.9e4ea020696e44228cb4.jpg",
-    "static/media/project5.jpg": "./static/media/project5.b57c8df48c10929a4de4.jpg",
-    "static/media/project1.jpg": "./static/media/project1.57f80069c2df622a7f2e.jpg",
-    "static/media/project2.jpg": "./static/media/project2.93e13872e1f06c9f1269.jpg",
-    "static/media/project3.jpg": "./static/media/project3.cbb969d43cf2a348e1be.jpg",
-    "static/media/project4.jpg": "./static/media/project4.c9bb7c7552071131e4f2.jpg",
-    "static/media/net.png": "./static/media/net.a50243ef015c954f1889.png",
-    "static/media/postgressql.png": "./static/media/postgressql.7de4e3f21233a6b29500.png",
-    "static/media/logo.png": "./static/media/logo.47f831c86ca510774b12.png",
-    "index.html": "./index.html",
-    "main.766fd2eb.css.map": "./static/css/main.766fd2eb.css.map",
-    "main.7e5cc114.js.map": "./static/js/main.7e5cc114.js.map"
+    "main.css": "/portfolio/static/css/main.0f5cee60.css",
+    "main.js": "/portfolio/static/js/main.6da4c402.js",
+    "static/media/profile.png": "/portfolio/static/media/profile.1bcab5a4c018447d26da.png",
+    "static/media/project6.jpg": "/portfolio/static/media/project6.9e4ea020696e44228cb4.jpg",
+    "static/media/project5.jpg": "/portfolio/static/media/project5.b57c8df48c10929a4de4.jpg",
+    "static/media/project7.jpg": "/portfolio/static/media/project7.85122f93d458a6452479.jpg",
+    "static/media/project1.jpg": "/portfolio/static/media/project1.57f80069c2df622a7f2e.jpg",
+    "static/media/project2.jpg": "/portfolio/static/media/project2.93e13872e1f06c9f1269.jpg",
+    "static/media/project3.jpg": "/portfolio/static/media/project3.cbb969d43cf2a348e1be.jpg",
+    "static/media/project4.jpg": "/portfolio/static/media/project4.c9bb7c7552071131e4f2.jpg",
+    "static/media/net.png": "/portfolio/static/media/net.a50243ef015c954f1889.png",
+    "static/media/postgressql.png": "/portfolio/static/media/postgressql.7de4e3f21233a6b29500.png",
+    "static/media/logo.png": "/portfolio/static/media/logo.47f831c86ca510774b12.png",
+    "index.html": "/portfolio/index.html",
+    "main.0f5cee60.css.map": "/portfolio/static/css/main.0f5cee60.css.map",
+    "main.6da4c402.js.map": "/portfolio/static/js/main.6da4c402.js.map"
   },
   "entrypoints": [
-    "static/css/main.766fd2eb.css",
-    "static/js/main.7e5cc114.js"
+    "static/css/main.0f5cee60.css",
+    "static/js/main.6da4c402.js"
   ]
 }
