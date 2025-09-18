@@ -10,6 +10,6 @@ export default `<!DOCTYPE html>
   <style>*{margin:0;padding:0;font-family:Inter,sans-serif;box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden;font-size:16px}body{margin:0;padding:0;background-color:#2f3542;min-width:320px;width:100%;overflow-x:hidden}@viewport{width:device-width;zoom:1;min-zoom:1;max-zoom:1;user-zoom:fixed}</style><link rel="stylesheet" href="styles-4OMVEM3Y.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-4OMVEM3Y.css"></noscript></head>
   <body ngcm="">
     <app-root></app-root>
-  <script src="main-33NNWAKP.js" type="module"></script></body>
+  <script src="main-ZJ67OW5Z.js" type="module"></script></body>
 </html>
 `;
