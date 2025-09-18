@@ -1,0 +1,16 @@
+<div class="experience-container" id="experience">
+  <h1>Experiências<span class="accent">.</span></h1>
+
+  <div class="timeline">
+    @for (exp of experiences; track exp.id) {
+    <div class="experience-item">
+      <div class="period">{{ exp.period }}</div>
+      <div class="content">
+        <h3 class="company">
+          {{ exp.jobTitle }} | <span class="company-name">{{ exp.company }}</span>
+        </h3>
+      </div>
+    </div>
+    }
+  </div>
+</div>

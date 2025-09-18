@@ -1,0 +1,248 @@
+@use '../../../styles/variables' as *;
+
+.contact-container {
+  padding: 6rem 12rem 6rem 12rem;
+  background-color: $gray-800;
+
+  h1 {
+    color: $gray-100;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .accent {
+      color: $primary;
+    }
+  }
+
+  .subtitle {
+    color: $gray-300;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .contact-info {
+    .contact-methods {
+      margin-top: 2rem;
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        color: $gray-300;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $primary-light;
+        }
+
+        .icon {
+          width: 24px;
+          height: 24px;
+          margin-right: 1rem;
+          fill: currentColor;
+        }
+      }
+    }
+  }
+
+  .contact-form {
+    background: rgba($gray-900, 0.5);
+    padding: 2.5rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($gray-700, 0.3);
+    max-width: 100%;
+
+    .form-group {
+      margin-bottom: 1.5rem;
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: $gray-300;
+      }
+
+      .error-message {
+        display: block;
+        color: #ff4444;
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+        animation: fadeIn 0.2s ease-in;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        background: rgba($gray-800, 0.5);
+        border: 1px solid rgba($gray-700, 0.3);
+        border-radius: 6px;
+        color: $gray-100;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+        margin: 0;
+
+        &.invalid {
+          border-color: #ff4444;
+
+          &:focus {
+            border-color: #ff6666;
+            box-shadow: 0 0 0 1px rgba(#ff4444, 0.2);
+          }
+        }
+
+        &:focus {
+          outline: none;
+          border-color: $primary;
+          background: rgba($gray-800, 0.8);
+        }
+
+        &::placeholder {
+          color: $gray-500;
+        }
+      }
+
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: 0.75rem;
+      background: $primary;
+      color: $gray-900;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: $primary-light;
+      }
+
+      &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+
+      .spinner {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgba($gray-900, 0.3);
+        border-top-color: $gray-900;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+    }
+  }
+
+  .status-message {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    animation: slideIn 0.3s ease-out;
+    position: relative;
+    overflow: hidden;
+
+    .status-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      animation: timeoutBar 5s linear;
+    }
+
+    &.success {
+      background: rgba($primary, 0.15);
+      color: $primary-light;
+      border: 1px solid rgba($primary, 0.3);
+
+      &::before {
+        background-color: $primary;
+      }
+    }
+
+    &.error {
+      background: rgba(#ff4444, 0.15);
+      color: #ff6666;
+      border: 1px solid rgba(#ff4444, 0.3);
+
+      &::before {
+        background-color: #ff4444;
+      }
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes timeoutBar {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 6rem 2rem 6rem 2rem;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

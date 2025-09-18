@@ -1,0 +1,12 @@
+.div-home {
+  padding: 12rem;
+  padding-bottom: 15rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 0px;
+  }
+}
+
+.div-about {
+  width: 100%;
+}

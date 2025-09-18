@@ -1,0 +1,19 @@
+<section class="recommendations-container">
+  <h1>Recomendações<span class="accent">.</span></h1>
+
+  <div class="recommendations-grid">
+    @for (recommendation of recommendations; track recommendation.id) {
+    <div class="recommendation-card">
+      <div class="person-info">
+        <img [src]="recommendation.avatar" [alt]="recommendation.name" class="avatar" />
+        <div class="info">
+          <div class="name">{{ recommendation.name }}</div>
+          <div class="position">{{ recommendation.position }}</div>
+          <div class="relationship">{{ recommendation.relationship }}</div>
+        </div>
+      </div>
+      <p class="description">{{ recommendation.description }}</p>
+    </div>
+    }
+  </div>
+</section>

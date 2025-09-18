@@ -1,0 +1,45 @@
+@use '../../../styles/variables' as *;
+
+.full {
+  width: 100%;
+  min-width: 320px; // Largura mínima para evitar redução excessiva
+  background-color: $gray-800;
+  overflow-x: hidden;
+}
+
+h1 {
+  color: $gray-100;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  .accent {
+    color: $primary;
+  }
+}
+
+.main-container {
+  width: 100%;
+  min-width: 320px;
+  padding: 6rem 2rem;
+  position: relative;
+  box-sizing: border-box;
+
+  @media screen and (min-width: 1200px) {
+    padding: 6rem 12rem;
+  }
+
+  p {
+    color: $gray-300;
+    font-size: 16px;
+    margin-bottom: 2rem;
+  }
+
+  .closing-brace {
+    display: block;
+    text-align: right;
+    color: $primary;
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+}

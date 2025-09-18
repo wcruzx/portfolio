@@ -1,0 +1,18 @@
+<div class="full">
+  <h1>Educação<span class="accent">.</span></h1>
+  <div class="education-cards">
+    @for (education of educationList; track education.id) {
+    <div class="education-card">
+      <div class="card-header">
+        <img [src]="education.icon" alt="Education Icon" />
+        <h3>{{ education.institution }}</h3>
+      </div>
+      <div class="card-body">
+        <h4>{{ education.courseName }}</h4>
+        <p class="course-type">{{ education.courseType }}</p>
+        <p class="period">{{ education.period }}</p>
+      </div>
+    </div>
+    }
+  </div>
+</div>

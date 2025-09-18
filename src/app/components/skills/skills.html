@@ -1,0 +1,12 @@
+<section class="skills-container">
+  <h1>Habilidades<span class="accent">.</span></h1>
+
+  <div class="skills-grid">
+    @for (skill of skills; track skill.name) {
+    <div class="skill-item">
+      <img [src]="skill.iconPath" [alt]="skill.name" class="skill-icon" />
+      <span class="skill-name">{{ skill.name }}</span>
+    </div>
+    }
+  </div>
+</section>

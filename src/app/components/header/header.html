@@ -1,0 +1,19 @@
+<div class="navbar">
+  <div class="container-header">
+    <div class="logo">
+      <span> {{ getLogo() }} </span>
+    </div>
+    <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
+      <span class="hamburger"></span>
+    </button>
+    <div class="menus" [class.active]="isMenuOpen">
+      <ul>
+        @for (item of menuItems; track item.id) {
+        <li (click)="scrollToSection(item.target)" [attr.data-target]="item.target">
+          {{ item.label }}
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

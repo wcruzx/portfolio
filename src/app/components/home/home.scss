@@ -1,0 +1,188 @@
+@use '../../../styles/variables' as *;
+
+.main-full {
+  background-color: $gray-900;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  min-width: 320px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 1rem;
+  }
+}
+
+.profile-photo {
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  img {
+    width: 275px;
+    height: 344px;
+
+    @media screen and (max-width: 768px) {
+      width: 200px;
+      height: auto;
+    }
+  }
+}
+
+.hello.terminal {
+  background-color: $gray-800;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 600px;
+  overflow: hidden;
+  font-family: 'Consolas', monospace;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .terminal-bar {
+    background-color: $gray-700;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+    .terminal-buttons {
+      display: flex;
+      gap: 8px;
+      margin-right: 16px;
+
+      .terminal-button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+
+        &.close {
+          background-color: #ff5f56;
+        }
+        &.minimize {
+          background-color: #ffbd2e;
+        }
+        &.zoom {
+          background-color: #27c93f;
+        }
+      }
+    }
+
+    .terminal-title {
+      color: $gray-300;
+      font-size: 14px;
+    }
+  }
+
+  .terminal-window {
+    padding: 20px;
+    min-height: 300px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      height: 16px;
+      border-right: 2px solid $gray-100;
+      animation: cursor-blink 1s step-end infinite;
+    }
+
+    .line {
+      color: $gray-300;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      white-space: nowrap;
+
+      &.success {
+        color: $primary-light;
+        margin-left: 20px;
+      }
+    }
+
+    .typing {
+      position: relative;
+      color: $gray-100;
+      animation: typing 2s steps(20, end);
+    }
+
+    .typing-name {
+      color: $primary;
+      position: relative;
+      font-size: 24px;
+      font-weight: bold;
+      animation: typing-name 1.5s steps(15, end) 2.5s forwards;
+      opacity: 0;
+    }
+
+    .typing-role {
+      color: $primary-light;
+      position: relative;
+      font-size: 20px;
+      animation: typing-role 2s steps(20, end) 4.5s forwards;
+      opacity: 0;
+    }
+
+    .prompt {
+      .cursor {
+        display: inline-block;
+        width: 8px;
+        height: 16px;
+        background-color: $primary;
+        animation: cursor-blink 1s step-end infinite;
+        margin-left: 4px;
+      }
+    }
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typing-name {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes typing-role {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
