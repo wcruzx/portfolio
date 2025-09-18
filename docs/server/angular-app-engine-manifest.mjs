@@ -1,6 +1,6 @@
 
 export default {
-  basePath: 'C:/Program Files/Git/portfolio',
+  basePath: '/portfolio',
   supportedLocales: {
   "en-US": ""
 },
