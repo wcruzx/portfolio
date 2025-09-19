@@ -1,3 +1,5 @@
+@use '../styles/variables' as *;
+
 .div-home {
   padding: 12rem;
   padding-bottom: 15rem;
@@ -9,4 +11,5 @@
 
 .div-about {
   width: 100%;
+  background-color: $gray-100;
 }
