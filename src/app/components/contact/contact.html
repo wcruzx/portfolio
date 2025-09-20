@@ -106,7 +106,7 @@
           id="message"
           name="message"
           [(ngModel)]="contactData.message"
-          placeholder="Como posso ajudar?"
+          placeholder="Digite sua mensagem"
           required
           #message="ngModel"
           [class.invalid]="message.invalid && (message.dirty || message.touched)"
@@ -117,11 +117,7 @@
         </span>
         }
       </div>
-      <button
-        type="submit"
-        class="submit-button"
-        [disabled]="!contactForm.form.valid || isSubmitting"
-      >
+      <button type="submit" class="submit-button">
         @if (isSubmitting) {
         <span class="spinner"></span>
         } @else { Enviar mensagem }

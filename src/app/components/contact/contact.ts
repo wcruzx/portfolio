@@ -11,27 +11,46 @@ import { AlertComponent } from '../shared/alert.component';
   templateUrl: './contact.html',
   styleUrls: ['./contact.scss'],
   standalone: true,
-  imports: [FormsModule, CommonModule, AlertComponent]
+  imports: [FormsModule, CommonModule, AlertComponent],
 })
 export class ContactComponent {
   contactData: ContactModel = {
     name: '',
     email: '',
-    message: ''
+    message: '',
   };
 
   contactInfo = CONTACT_INFO;
   isSubmitting = false;
   submitStatus: 'success' | 'error' | null = null;
 
-  constructor(
-    private emailService: EmailService,
-    private alertService: AlertService
-  ) {}
+  constructor(private emailService: EmailService, private alertService: AlertService) {}
 
   async onSubmit() {
     if (this.isSubmitting) return;
-    
+
+    // Validação dos campos
+    if (!this.contactData.name?.trim()) {
+      console.log('Nome vazio');
+      this.alertService.showError('Por favor, preencha o campo Nome');
+      return;
+    }
+
+    if (!this.contactData.email?.trim()) {
+      this.alertService.showError('Por favor, preencha o campo Email');
+      return;
+    }
+
+    if (!this.validateEmail(this.contactData.email)) {
+      this.alertService.showError('Por favor, insira um email válido');
+      return;
+    }
+
+    if (!this.contactData.message?.trim()) {
+      this.alertService.showError('Por favor, preencha o campo Mensagem');
+      return;
+    }
+
     this.isSubmitting = true;
 
     try {
@@ -50,7 +69,12 @@ export class ContactComponent {
     this.contactData = {
       name: '',
       email: '',
-      message: ''
+      message: '',
     };
+  }
+
+  private validateEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   }
 }
