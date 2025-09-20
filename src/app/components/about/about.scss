@@ -2,7 +2,7 @@
 
 .full {
   width: 100%;
-  min-width: 320px; // Largura mínima para evitar redução excessiva
+  min-width: 320px;
   background-color: $gray-800;
   overflow-x: hidden;
 }
@@ -20,12 +20,12 @@ h1 {
 .main-container {
   width: 100%;
   min-width: 320px;
-  padding: 6rem 2rem;
+  padding: 3rem 12rem;
   position: relative;
   box-sizing: border-box;
 
-  @media screen and (min-width: 1200px) {
-    padding: 6rem 12rem;
+  @media screen and (max-width: 1024px) {
+    padding: 3rem 2rem;
   }
 
   p {

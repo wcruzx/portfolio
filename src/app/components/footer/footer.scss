@@ -1,0 +1,31 @@
+@use '../../../styles/variables' as *;
+
+.footer {
+  background-color: $gray-900;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba($primary, 0.1);
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.copyright {
+  color: $gray-400;
+  font-size: 0.9rem;
+  margin: 0;
+
+  .rights {
+    color: $gray-600;
+    margin-left: 0.5rem;
+  }
+
+  .highlight {
+    color: $primary;
+    font-weight: 600;
+  }
+}

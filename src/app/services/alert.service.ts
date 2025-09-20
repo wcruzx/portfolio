@@ -7,7 +7,7 @@ export interface Alert {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AlertService {
   private alertSubject = new BehaviorSubject<Alert | null>(null);

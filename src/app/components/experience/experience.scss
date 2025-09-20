@@ -1,59 +1,30 @@
 @use '../../../styles/variables' as *;
 
 .experience-container {
-  padding: 6rem 12rem 6rem 12rem;
-  background-color: $gray-800;
-  min-width: 320px;
+  background: $gray-800;
+  padding: 0 12rem 6rem 12rem;
 
   h1 {
     color: $gray-100;
     font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 2rem;
-
+    padding-top: 3rem;
+    margin-bottom: 1rem;
     .accent {
       color: $primary;
     }
   }
-
-  @media screen and (max-width: 768px) {
-    padding: 6rem 2rem 6rem 1rem;
-
-    .timeline {
-      gap: 0px;
-    }
-
-    .experience-item {
-      gap: 0px;
-      .period {
-        font-size: 0.5rem;
-        text-align: center;
-      }
-      .content {
-        .company {
-          font-size: 0.7rem;
-
-          .company-name {
-            font-size: 0.8rem;
-          }
-        }
-      }
-    }
-  }
-}
-
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
 }
 
 .experience-item {
   display: flex;
-  gap: 2rem;
+  border-radius: 8px;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
 
   .period {
-    color: $primary;
+    color: $gray-300;
+    font-size: 0.9rem;
     min-width: 150px;
   }
 
@@ -75,5 +46,46 @@
         font-size: 1rem;
       }
     }
+  }
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.role-info {
+  .job-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $primary;
+    margin-bottom: 0.5rem;
+  }
+
+  .company-name {
+    font-size: 1rem;
+    color: $gray-400;
+  }
+}
+
+.period {
+  font-size: 0.9rem;
+  color: $gray-300;
+
+  @media (max-width: 768px) {
+    align-self: flex-start;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .experience-container {
+    padding: 0 2rem 3rem 2rem;
   }
 }

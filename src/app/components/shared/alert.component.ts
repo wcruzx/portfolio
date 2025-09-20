@@ -28,8 +28,8 @@ import { AlertService } from '../../services/alert.service';
     `
       :host {
         position: fixed;
-        top: 250px;
-        right: 59px;
+        top: -60px;
+        right: 5px;
         z-index: 1000;
       }
 
