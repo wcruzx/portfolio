@@ -65,7 +65,7 @@ export class ContactComponent {
     }
   }
 
-  private resetForm() {
+  resetForm() {
     this.contactData = {
       name: '',
       email: '',
