@@ -11,8 +11,11 @@
         <h3 class="project-title">{{ project.title }}</h3>
         <p class="project-description">{{ project.description }}</p>
         <div class="tech-tags">
-          @for (tech of project.technologies; track tech) {
-          <span class="tech-tag">{{ tech }}</span>
+          @for (tech of project.technologies; track tech.name) {
+          <span class="tech-tag">
+            <img [src]="tech.iconPath" [alt]="tech.name" class="tech-icon" />
+            {{ tech.name }}
+          </span>
           }
         </div>
         <div class="project-links">

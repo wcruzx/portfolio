@@ -3,15 +3,13 @@
 
   <div class="timeline">
     @for (exp of experiences; track exp.id) {
-    <div class="experience-item">
+    <div class="experience-card">
       <div class="experience-header">
         <div class="role-info">
           <div class="job-title">{{ exp.jobTitle }}</div>
           <div class="company-name">{{ exp.company }}</div>
         </div>
-        <div class="period">
-          <h4>{{ exp.period }}</h4>
-        </div>
+        <div class="period">{{ exp.period }}</div>
       </div>
     </div>
     }
