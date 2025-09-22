@@ -83,6 +83,7 @@
   }
 
   .terminal-window {
+    color: $gray-200;
     padding: 20px;
     min-height: 300px;
     position: relative;
@@ -98,39 +99,59 @@
     }
 
     .line {
-      color: $gray-300;
-      font-size: 16px;
-      line-height: 1.5;
-      margin-bottom: 10px;
-      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
 
       &.success {
-        color: $primary-light;
+        color: $primary;
         margin-left: 20px;
+        font-weight: 700;
+      }
+
+      .typing {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid $primary;
+        width: 0;
+        margin-left: 0.5rem;
+
+        .highlight {
+          color: $primary-light;
+          font-weight: 400;
+        }
       }
     }
 
     .typing {
-      position: relative;
-      color: $gray-100;
-      animation: typing 2s steps(20, end);
-    }
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid $primary;
+      width: 0;
 
-    .typing-name {
-      color: $primary;
-      position: relative;
-      font-size: 24px;
-      font-weight: bold;
-      animation: typing-name 1.5s steps(15, end) 2.5s forwards;
-      opacity: 0;
-    }
+      &.name {
+        color: $primary;
+        position: relative;
+        font-size: 24px;
+        font-weight: bold;
+        animation: typing-name 1.5s steps(15, end) 2.5s forwards;
+        opacity: 0;
+      }
 
-    .typing-role {
-      color: $primary-light;
-      position: relative;
-      font-size: 20px;
-      animation: typing-role 2s steps(20, end) 4.5s forwards;
-      opacity: 0;
+      &.role {
+        color: $primary-light;
+        position: relative;
+        font-size: 20px;
+        animation: typing-role 2s steps(20, end) 4.5s forwards;
+        opacity: 0;
+      }
+
+      .highlight {
+        color: $primary-light;
+        font-weight: 400;
+      }
     }
 
     .prompt {
@@ -143,6 +164,22 @@
         margin-left: 4px;
       }
     }
+  }
+}
+
+.first-line {
+  animation: typing 3s steps(50, end) 0.5s forwards, blink-caret 1s step-end infinite 0.5s,
+    hide-caret 0s linear 3.5s forwards;
+}
+
+.second-line {
+  animation: typing 2.5s steps(40, end) 4s forwards, blink-caret 1s step-end infinite 4s,
+    hide-caret 0s linear 6.5s forwards;
+}
+
+@keyframes hide-caret {
+  to {
+    border-right: none;
   }
 }
 
@@ -184,5 +221,43 @@
   }
   50% {
     opacity: 0;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: $primary;
+  }
+}
+
+.cursor {
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.success {
+  color: $primary;
+  font-weight: 700;
+  animation: fadeIn 0.5s ease-in 6.5s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }
