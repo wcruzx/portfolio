@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-education',
   imports: [],
   templateUrl: './education.html',
-  styleUrl: './education.scss'
+  styleUrl: './education.scss',
 })
 export class Education {
   educationList: EducationModel[] = [
@@ -14,7 +14,7 @@ export class Education {
       institution: 'Anhanguera Educacional',
       courseName: 'Arquitetura de Microsserviços',
       courseType: 'MBA',
-      period: 'Setembro 2025 - Fevereiro 2026'
+      period: 'Setembro 2025 - Março 2026',
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export class Education {
       institution: 'Anhanguera Educacional',
       courseName: 'Engenharia de Software',
       courseType: 'Pós Graduação',
-      period: 'Março 2025 - Setembro 2025'
+      period: 'Março 2025 - Setembro 2025',
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ export class Education {
       institution: 'UNOPAR - Universidade Norte do Paraná',
       courseName: 'Análise e Desenvolvimento de Sistemas',
       courseType: 'Graduação',
-      period: 'Julho 2022 - Dezembro 2024'
-    }
+      period: 'Julho 2022 - Dezembro 2024',
+    },
   ];
 }

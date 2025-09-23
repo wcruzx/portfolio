@@ -86,6 +86,11 @@ export const SKILLS_DATA: SkillModel[] = [
     category: 'Backend',
   },
   {
+    name: 'SASS',
+    iconPath: 'assets/sass.svg',
+    category: 'Frontend',
+  },
+  {
     name: 'Maven',
     iconPath: 'assets/maven.svg',
     category: 'Backend',

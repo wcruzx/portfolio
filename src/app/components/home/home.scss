@@ -18,6 +18,8 @@
 }
 
 .profile-photo {
+  position: relative;
+
   @media screen and (max-width: 768px) {
     width: 100%;
     display: flex;
@@ -25,12 +27,36 @@
   }
 
   img {
-    width: 275px;
+    width: 650px;
     height: 344px;
+    position: relative;
+    z-index: 1;
 
     @media screen and (max-width: 768px) {
-      width: 200px;
+      width: 370px;
       height: auto;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba($gray-900, 0.3) 30%,
+      rgba($gray-900, 0.7) 70%,
+      $gray-900 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+
+    @media screen and (max-width: 768px) {
+      display: none;
     }
   }
 }

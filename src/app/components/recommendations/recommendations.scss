@@ -14,6 +14,9 @@
     .accent {
       color: $primary;
     }
+    @media screen and (max-width: 768px) {
+      font-size: 2.3rem;
+    }
   }
 
   .recommendations-grid {

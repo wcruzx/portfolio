@@ -18,6 +18,9 @@ export const PROJECTS_DATA: ProjectModel[] = [
     description:
       'Sistema com o objetivo de fomentar a inovação e a autonomia dos profissionais do direito.',
     technologies: [
+      SKILLS_DATA.find((skill) => skill.name === 'HTML5')!,
+      SKILLS_DATA.find((skill) => skill.name === 'CSS3')!,
+      SKILLS_DATA.find((skill) => skill.name === 'SASS')!,
       SKILLS_DATA.find((skill) => skill.name === 'Angular')!,
       SKILLS_DATA.find((skill) => skill.name === 'TypeScript')!,
     ],
