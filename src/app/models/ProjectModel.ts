@@ -63,7 +63,7 @@ export const PROJECTS_DATA: ProjectModel[] = [
   },
   {
     id: 4,
-    image: 'assets/project4.png',
+    image: 'assets/project4.1.png',
     title: 'Chess Game',
     description: 'O Chess Game é uma aplicação de xadrez multijogador através do navegador Web.',
     technologies: [

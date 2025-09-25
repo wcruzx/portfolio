@@ -6,8 +6,13 @@
     <div class="experience-card">
       <div class="experience-header">
         <div class="role-info">
-          <div class="job-title">{{ exp.jobTitle }}</div>
-          <div class="company-name">{{ exp.company }}</div>
+          <div class="text-info">
+            <div class="job-title">{{ exp.jobTitle }}</div>
+            <div class="company-name">
+              <i class="bi bi-building" style="width: 24px; height: 24px"></i>
+              {{ exp.company }}
+            </div>
+          </div>
         </div>
         <div class="period">{{ exp.period }}</div>
       </div>
