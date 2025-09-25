@@ -13,7 +13,7 @@ export interface ProjectModel {
 export const PROJECTS_DATA: ProjectModel[] = [
   {
     id: 1,
-    image: 'assets/project1.png',
+    image: 'assets/project1.2.png',
     title: 'Sistema de Empreendedorismo Jurídico',
     description:
       'Sistema com o objetivo de fomentar a inovação e a autonomia dos profissionais do direito.',
@@ -29,7 +29,7 @@ export const PROJECTS_DATA: ProjectModel[] = [
   },
   {
     id: 2,
-    image: 'assets/project2.png',
+    image: 'assets/project2.1.png',
     title: 'Sistema Municipal de Gestão de Estágio',
     description:
       'Sistema para inscrição e gerenciamento de estágios da Prefeitura de Campo Grande, que oferece vagas remuneradas para estudantes de nível profissionalizante, médio e superior.',
@@ -46,7 +46,7 @@ export const PROJECTS_DATA: ProjectModel[] = [
   },
   {
     id: 3,
-    image: 'assets/project3.png',
+    image: 'assets/project3.1.png',
     title: 'Sistema de Agendamento de Castração',
     description:
       'Sistema de agendamento de castração do município de Campo Grande para controle e marcação de procedimentos de castração animal.',
@@ -78,7 +78,7 @@ export const PROJECTS_DATA: ProjectModel[] = [
   },
   {
     id: 5,
-    image: 'assets/project5.png',
+    image: 'assets/project5.1.png',
     title: 'Nunes Sports',
     description:
       'Sistema de gerenciamento de produtos desenvolvido para um desafio técnico, ele permite a exibição, criação, edição e delete de produtos.',
@@ -95,7 +95,7 @@ export const PROJECTS_DATA: ProjectModel[] = [
   },
   {
     id: 6,
-    image: 'assets/project6.png',
+    image: 'assets/project6.1.png',
     title: 'API RESTful - ViaCEP',
     description:
       'O projeto é uma API RESTful, que consulta o endereço com base em um CEP fornecido e calcula o frete conforme a região do Brasil.',

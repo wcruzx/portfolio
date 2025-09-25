@@ -193,12 +193,16 @@
   }
 }
 
-.first-line {
+.typing.first-line {
   animation: typing 3s steps(50, end) 0.5s forwards, blink-caret 1s step-end infinite 0.5s,
     hide-caret 0s linear 3.5s forwards;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 }
 
-.second-line {
+.typing.second-line {
   animation: typing 2.5s steps(40, end) 4s forwards, blink-caret 1s step-end infinite 4s,
     hide-caret 0s linear 6.5s forwards;
 }
