@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+export default `<!DOCTYPE html>
 <html lang="en" data-beasties-container="">
   <head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <meta charset="utf-8">
     <title>Wéverson Cruz - Desenvolvedor FullStack</title>
     <base href="/portfolio/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="/src/assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/src/assets/favicon.ico?">
 
     <!-- Meta Tags para SEO e Open Graph -->
     <meta name="description" content="Portfolio de Wéverson Cruz - Desenvolvedor FullStack especializado em Angular, Java e tecnologias modernas.">
@@ -45,3 +45,4 @@
     <app-root></app-root>
   <script src="main-YXIWRJZX.js" type="module"></script></body>
 </html>
+`;
