@@ -20,11 +20,22 @@ export class Header {
   }
 
   scrollToSection(target: string) {
+    if (target === 'curriculo') {
+      this.viewCV();
+      return;
+    }
+
     const element = document.getElementById(target);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      this.isMenuOpen = false; // Fecha o menu após clicar
+      this.isMenuOpen = false;
     }
+  }
+
+  viewCV() {
+    window.open('assets/curriculo.pdf', '_blank');
+
+    this.isMenuOpen = false;
   }
 
   menuItems: MenuItem[] = [
@@ -33,11 +44,14 @@ export class Header {
     { id: 3, label: 'Experiências', target: 'experience' },
     { id: 4, label: 'Projetos', target: 'projects' },
     { id: 5, label: 'Contato', target: 'contact' },
+    { id: 6, label: 'Currículo', target: 'curriculo' },
   ];
 
   getMenuItems(): MenuItem[] {
     return this.menuItems;
   }
+
+  specialItems: MenuItem[] = [{ id: 6, label: 'Currículo', target: 'curriculo' }];
 
   getLogo(): string {
     return '{Dev}';
