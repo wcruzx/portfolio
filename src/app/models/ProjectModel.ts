@@ -12,6 +12,21 @@ export interface ProjectModel {
 
 export const PROJECTS_DATA: ProjectModel[] = [
   {
+    id: 7,
+    image: 'assets/project7.png',
+    title: 'Landing Page - FGTS Inovac',
+    description:
+      'Landing page desenvolvida para apresentar e promover um serviço financeiro de antecipação do saque do FGTS.',
+    technologies: [
+      SKILLS_DATA.find((skill) => skill.name === 'HTML5')!,
+      SKILLS_DATA.find((skill) => skill.name === 'CSS3')!,
+      SKILLS_DATA.find((skill) => skill.name === 'Angular')!,
+      SKILLS_DATA.find((skill) => skill.name === 'TypeScript')!,
+    ],
+    liveUrl: 'https://wcruzx.github.io/fgts-inovac/',
+    githubUrl: 'https://github.com/wcruzx/fgts-inovac',
+  },
+  {
     id: 1,
     image: 'assets/project1.2.png',
     title: 'Sistema de Empreendedorismo Jurídico',
