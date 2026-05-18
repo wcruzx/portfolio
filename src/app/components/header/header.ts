@@ -54,6 +54,6 @@ export class Header {
   specialItems: MenuItem[] = [{ id: 6, label: 'Currículo', target: 'curriculo' }];
 
   getLogo(): string {
-    return '{Dev}';
+    return '{WC}';
   }
 }

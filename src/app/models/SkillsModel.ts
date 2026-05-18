@@ -105,4 +105,19 @@ export const SKILLS_DATA: SkillModel[] = [
     iconPath: 'assets/typescript.svg',
     category: 'Frontend',
   },
+  {
+    name: 'Docker',
+    iconPath: 'assets/docker.svg',
+    category: 'Tools',
+  },
+  {
+    name: 'SQL Server',
+    iconPath: 'assets/microsoftsqlserver.svg',
+    category: 'Database',
+  },
+  {
+    name: 'Vue.js',
+    iconPath: 'assets/vuejs.svg',
+    category: 'Frontend',
+  },
 ];

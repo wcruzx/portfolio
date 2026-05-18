@@ -31,6 +31,9 @@
     height: 344px;
     position: relative;
     z-index: 1;
+    /* Suaviza o rodapé da imagem */
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 
     @media screen and (max-width: 768px) {
       width: 370px;
