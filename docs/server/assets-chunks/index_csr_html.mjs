@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+export default `<!DOCTYPE html>
 <html lang="en" data-beasties-container="">
 
 <head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -44,6 +44,6 @@
 
 <body ngcm="">
   <app-root></app-root>
-<script src="main-QP5HBTYN.js" type="module"></script></body>
+<script src="main-325EMX6Z.js" type="module"></script></body>
 
-</html>
+</html>`;
