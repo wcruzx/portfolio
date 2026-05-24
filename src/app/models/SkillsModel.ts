@@ -11,6 +11,11 @@ export const SKILLS_DATA: SkillModel[] = [
     category: 'Frontend',
   },
   {
+    name: 'Azure',
+    iconPath: 'assets/azure.svg',
+    category: 'Cloud',
+  },
+  {
     name: 'Bootstrap',
     iconPath: 'assets/bootstrap.svg',
     category: 'Frontend',
@@ -24,6 +29,11 @@ export const SKILLS_DATA: SkillModel[] = [
     name: 'CSS3',
     iconPath: 'assets/css3.svg',
     category: 'Frontend',
+  },
+  {
+    name: 'Docker',
+    iconPath: 'assets/docker.svg',
+    category: 'Tools',
   },
   {
     name: '.NET Core',
@@ -86,6 +96,11 @@ export const SKILLS_DATA: SkillModel[] = [
     category: 'Backend',
   },
   {
+    name: 'SQL Server',
+    iconPath: 'assets/microsoftsqlserver.svg',
+    category: 'Database',
+  },
+  {
     name: 'SASS',
     iconPath: 'assets/sass.svg',
     category: 'Frontend',
@@ -104,16 +119,6 @@ export const SKILLS_DATA: SkillModel[] = [
     name: 'TypeScript',
     iconPath: 'assets/typescript.svg',
     category: 'Frontend',
-  },
-  {
-    name: 'Docker',
-    iconPath: 'assets/docker.svg',
-    category: 'Tools',
-  },
-  {
-    name: 'SQL Server',
-    iconPath: 'assets/microsoftsqlserver.svg',
-    category: 'Database',
   },
   {
     name: 'Vue.js',
