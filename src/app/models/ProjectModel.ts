@@ -16,7 +16,7 @@ export const PROJECTS_DATA: ProjectModel[] = [
     image: 'assets/project8.png',
     title: 'Kratos Sistemas',
     description:
-      'Sistema ERP online, das finanças ao comercial em um único software.',
+      'Sistema ERP online, Emissão de NFe, NFCe, MDFe, controle de estoque, Boleto e conciliação Bancária, Fluxo de Caixa, Compras, Pagamentos etc.',
     technologies: [
       SKILLS_DATA.find((skill) => skill.name === 'Azure')!,
       SKILLS_DATA.find((skill) => skill.name === 'Angular')!,
@@ -24,6 +24,7 @@ export const PROJECTS_DATA: ProjectModel[] = [
       SKILLS_DATA.find((skill) => skill.name === 'Java')!,
       SKILLS_DATA.find((skill) => skill.name === 'Spring')!,
       SKILLS_DATA.find((skill) => skill.name === 'SQL Server')!,
+      SKILLS_DATA.find((skill) => skill.name === 'PostgreSQL')!,
       SKILLS_DATA.find((skill) => skill.name === 'Docker')!,
     ],
     liveUrl: 'https://www.sistemakratos.com.br/',
