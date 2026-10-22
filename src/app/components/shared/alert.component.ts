@@ -9,7 +9,7 @@ import { AlertService } from '../../services/alert.service';
   template: `
     @if (alert$ | async; as alert) {
     <div class="alert-container" [class.show]="alert">
-      <div class="alert" [class]="alert.type">
+      <div class="alert" [class]="alert.type" [attr.role]="alert.type === 'error' ? 'alert' : 'status'">
         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           @if (alert.type === 'success') {
           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
@@ -26,11 +26,22 @@ import { AlertService } from '../../services/alert.service';
   `,
   styles: [
     `
+      /* Aviso fixo no canto superior direito, logo abaixo do cabeçalho (60px) */
       :host {
         position: fixed;
-        top: -60px;
-        right: 5px;
-        z-index: 1000;
+        top: 76px;
+        right: 16px;
+        z-index: 1100;
+      }
+
+      @media (max-width: 480px) {
+        :host {
+          left: 16px;
+        }
+
+        .alert {
+          min-width: 0 !important;
+        }
       }
 
       .alert-container {
