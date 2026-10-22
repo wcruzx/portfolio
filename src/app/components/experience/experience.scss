@@ -1,127 +1,115 @@
 @use '../../../styles/variables' as *;
+@use '../../../styles/layout' as *;
 
-.experience-container {
+$item-gap: 36px;
+
+.experience {
   background: $gray-900;
-  padding: 0 12rem 6rem 12rem;
-
-  h1 {
-    color: $gray-100;
-    font-size: 2.5rem;
-    text-align: center;
-    padding-top: 3rem;
-    margin-bottom: 1rem;
-    .accent {
-      color: $primary;
-    }
-  }
+  @include section;
 }
 
-.experience-item {
-  display: flex;
-  border-radius: 8px;
-  padding: 1rem 0;
-  transition: all 0.3s ease;
-
-  .period {
-    color: $gray-300;
-    font-size: 0.9rem;
-    min-width: 150px;
-  }
-
-  .content {
-    .company {
-      color: $gray-100;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-
-      .company-name {
-        font-size: 0.9rem;
-        color: $gray-300;
-      }
-
-      i {
-        font-size: 1rem;
-      }
-    }
-  }
+.container {
+  @include container;
 }
 
+.section-title {
+  @include section-title;
+}
+
+// Timeline: período | trilho com marcador | cargo e empresa
 .timeline {
-  display: grid;
-  gap: 2rem;
-  padding: 2rem 0;
-}
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
-.experience-card {
-  background-color: $gray-800;
-  border-radius: 8px;
-  padding: 1.5rem;
-  transition: transform 0.3s ease;
+  > li {
+    display: grid;
+    grid-template-columns: 220px 28px minmax(0, 1fr);
+    column-gap: 20px;
+    padding-bottom: $item-gap;
 
-  &:hover {
-    transform: translateY(-5px);
-  }
-}
+    &:last-child {
+      padding-bottom: 0;
 
-.experience-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.role-info {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-
-  .text-info {
-    .job-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: $primary;
-      margin-bottom: 0.5rem;
+      .rail::before {
+        display: none;
+      }
     }
 
-    .company-name {
-      color: $gray-400;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 2px;
-
-      .bi-building {
-        width: 24px;
-        height: 24px;
-        color: $gray-200;
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+    &.current .rail::after {
+      background: $primary;
+      border-color: $primary;
+      box-shadow: 0 0 0 5px rgba($primary, 0.18);
     }
   }
 }
 
 .period {
+  padding-top: 4px;
+  text-align: right;
+  font-size: 14px;
   color: $gray-300;
-  font-size: 0.9rem;
 }
 
-@media screen and (max-width: 768px) {
-  .experience-container {
-    padding: 0 2rem 3rem 2rem;
+.rail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  // Linha até o próximo item
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: -$item-gap;
+    width: 2px;
+    background: $gray-700;
   }
 
-  .timeline {
-    padding: 1rem 0;
+  // Marcador
+  &::after {
+    content: '';
+    position: relative;
+    width: 12px;
+    height: 12px;
+    margin-top: 8px;
+    border-radius: 50%;
+    background: $gray-900;
+    border: 2px solid $gray-600;
+  }
+}
+
+.job-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $gray-100;
+}
+
+.company-name {
+  margin-top: 2px;
+  font-weight: 500;
+  color: $primary-light;
+}
+
+@media screen and (max-width: 700px) {
+  .timeline > li {
+    grid-template-columns: 20px minmax(0, 1fr);
   }
 
-  .experience-header {
-    flex-direction: column;
-    gap: 0.5rem;
+  .period {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0 0 4px;
+    text-align: left;
+  }
+
+  .rail {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .details {
+    grid-column: 2;
   }
 }

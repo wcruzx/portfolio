@@ -1,58 +1,66 @@
 @use '../../../styles/variables' as *;
+@use '../../../styles/layout' as *;
 
-.skills-container {
-  padding: 0 12rem 6rem 12rem;
+.skills {
+  background: $gray-900;
+  @include section;
+}
 
-  h1 {
+.container {
+  @include container;
+}
+
+.section-title {
+  @include section-title;
+}
+
+// Uma linha por área: nome à esquerda, tecnologias à direita
+.skill-group {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  padding-block: 20px;
+  border-top: 1px solid $gray-700;
+
+  &:last-child {
+    border-bottom: 1px solid $gray-700;
+  }
+
+  h3 {
+    margin: 0;
+    padding-top: 6px;
+    font: 600 1rem $font-mono;
     color: $gray-100;
-    font-size: 2.5rem;
-    padding-top: 3rem;
-    margin-bottom: 2rem;
-    text-align: center;
-
-    .accent {
-      color: $primary;
-    }
   }
 
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 120px));
-    gap: 2rem;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 1200px;
+  @media screen and (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
+}
 
-  .skill-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-    .skill-icon {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 0.5rem;
-      transition: all 0.3s ease;
-    }
+.skill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid $gray-700;
+  border-radius: 4px;
+  font: 14px $font-mono;
+  color: $gray-200;
+}
 
-    &:hover {
-      .skill-icon {
-        transform: scale(1.1);
-        filter: none;
-        opacity: 1;
-      }
-    }
-
-    .skill-name {
-      color: $gray-100;
-      font-size: 1rem;
-      margin-top: 0.5rem;
-    }
-  }
-  @media screen and (max-width: 768px) {
-    padding: 0 2rem 3rem 2rem;
-  }
+.skill-icon {
+  width: 18px;
+  height: 18px;
 }

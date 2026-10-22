@@ -1,23 +1,48 @@
 @use 'styles/variables' as *;
-@import 'bootstrap-icons/font/bootstrap-icons.css';
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
   box-sizing: border-box;
 }
 
 html {
-  width: 100vw;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: $gray-900;
+  color: $gray-200;
+  font-family: $font-sans;
+  line-height: 1.6;
   min-width: 320px;
   width: 100%;
   overflow-y: hidden;
   margin: 0;
   padding: 0;
+}
+
+// Campos e botões herdam a fonte do site em vez da padrão do navegador
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+// Ao navegar pelo menu, o título da seção não fica escondido atrás do cabeçalho fixo
+[id] {
+  scroll-margin-top: $header-height;
+}
+
+:focus-visible {
+  outline: 2px solid $primary;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

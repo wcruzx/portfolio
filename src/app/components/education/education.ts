@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { EducationModel } from '../../models/EducationModel';
+import { I18nService } from '../../i18n/i18n.service';
 
 @Component({
   selector: 'app-education',
@@ -7,30 +9,29 @@ import { Component } from '@angular/core';
   styleUrl: './education.scss',
 })
 export class Education {
+  protected readonly i18n = inject(I18nService);
+
   educationList: EducationModel[] = [
     {
       id: 1,
-      icon: 'assets/education.svg',
       institution: 'Anhanguera Educacional',
-      courseName: 'Arquitetura de Microsserviços',
+      courseName: { pt: 'Arquitetura de Microsserviços', en: 'Microservices Architecture' },
       courseType: 'MBA',
-      period: 'Setembro 2025 - Março 2026',
+      period: { pt: 'Setembro 2025 - Março 2026', en: 'September 2025 - March 2026' },
     },
     {
       id: 2,
-      icon: 'assets/education.svg',
       institution: 'Anhanguera Educacional',
-      courseName: 'Engenharia de Software',
-      courseType: 'Pós Graduação',
-      period: 'Março 2025 - Setembro 2025',
+      courseName: { pt: 'Engenharia de Software', en: 'Software Engineering' },
+      courseType: { pt: 'Pós Graduação', en: 'Postgraduate' },
+      period: { pt: 'Março 2025 - Setembro 2025', en: 'March 2025 - September 2025' },
     },
     {
       id: 3,
-      icon: 'assets/education.svg',
       institution: 'UNOPAR - Universidade Norte do Paraná',
-      courseName: 'Análise e Desenvolvimento de Sistemas',
-      courseType: 'Graduação',
-      period: 'Julho 2022 - Dezembro 2024',
+      courseName: { pt: 'Análise e Desenvolvimento de Sistemas', en: 'Systems Analysis and Development' },
+      courseType: { pt: 'Graduação', en: 'Undergraduate' },
+      period: { pt: 'Julho 2022 - Dezembro 2024', en: 'July 2022 - December 2024' },
     },
   ];
 }

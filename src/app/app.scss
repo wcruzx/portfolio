@@ -7,9 +7,9 @@ body {
   overflow-x: hidden;
 }
 
+// Mesma altura de antes; na largura, o hero usa o contêiner de 1320px (ver home.scss)
 .div-home {
-  padding: 12rem;
-  padding-bottom: 15rem;
+  padding: 12rem 0 15rem;
 
   @media screen and (max-width: 768px) {
     padding: 0px;

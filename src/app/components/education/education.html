@@ -1,18 +1,18 @@
-<div class="education-container">
-  <h1>Educação<span class="accent">.</span></h1>
-  <div class="education-cards">
-    @for (education of educationList; track education.id) {
-    <div class="education-card">
-      <div class="card-header">
-        <img [src]="education.icon" alt="Education Icon" />
-        <h3>{{ education.institution }}</h3>
-      </div>
-      <div class="card-body">
-        <h4>{{ education.courseName }}</h4>
-        <p class="course-type">{{ education.courseType }}</p>
-        <p class="period">{{ education.period }}</p>
-      </div>
-    </div>
-    }
+<section class="education">
+  <div class="container">
+    <h2 class="section-title">{{ i18n.t('education.title') }}<span class="accent">.</span></h2>
+
+    <ol class="education-list">
+      @for (education of educationList; track education.id) {
+      <li>
+        <span class="period">{{ i18n.pick(education.period) }}</span>
+        <div>
+          <h3>{{ i18n.pick(education.courseName) }}</h3>
+          <div class="institution">{{ education.institution }}</div>
+        </div>
+        <span class="course-type">{{ i18n.pick(education.courseType) }}</span>
+      </li>
+      }
+    </ol>
   </div>
-</div>
+</section>

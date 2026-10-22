@@ -1,9 +1,10 @@
+import { Localized } from '../i18n/i18n.service';
 import { SkillModel, SKILLS_DATA } from './SkillsModel';
 
 export interface ProjectModel {
   id: number;
-  title: string;
-  description: string;
+  title: Localized;
+  description: Localized;
   image: string;
   technologies: SkillModel[];
   liveUrl?: string;
@@ -15,8 +16,10 @@ export const PROJECTS_DATA: ProjectModel[] = [
     id: 8,
     image: 'assets/project8.png',
     title: 'Kratos Sistemas',
-    description:
-      'Sistema ERP online, Emissão de NFe, NFCe, MDFe, controle de estoque, Boleto e conciliação Bancária, Fluxo de Caixa, Compras, Pagamentos etc.',
+    description: {
+      pt: 'Sistema ERP online, Emissão de NFe, NFCe, MDFe, controle de estoque, Boleto e conciliação Bancária, Fluxo de Caixa, Compras, Pagamentos etc.',
+      en: 'Online ERP system: electronic invoices (NFe, NFCe, MDFe), inventory control, bank slips and bank reconciliation, cash flow, purchasing, payments and more.',
+    },
     technologies: [
       SKILLS_DATA.find((skill) => skill.name === 'Azure')!,
       SKILLS_DATA.find((skill) => skill.name === 'Angular')!,
@@ -34,8 +37,10 @@ export const PROJECTS_DATA: ProjectModel[] = [
     id: 7,
     image: 'assets/project7.png',
     title: 'Landing Page - FGTS Inovac',
-    description:
-      'Landing page desenvolvida para apresentar e promover um serviço financeiro de antecipação do saque do FGTS.',
+    description: {
+      pt: 'Landing page desenvolvida para apresentar e promover um serviço financeiro de antecipação do saque do FGTS.',
+      en: 'Landing page built to present and promote a financial service for advancing FGTS withdrawals.',
+    },
     technologies: [
       SKILLS_DATA.find((skill) => skill.name === 'HTML5')!,
       SKILLS_DATA.find((skill) => skill.name === 'CSS3')!,
@@ -50,9 +55,14 @@ export const PROJECTS_DATA: ProjectModel[] = [
   {
     id: 1,
     image: 'assets/project1.2.png',
-    title: 'Sistema de Empreendedorismo Jurídico',
-    description:
-      'Sistema com o objetivo de fomentar a inovação e a autonomia dos profissionais do direito.',
+    title: {
+      pt: 'Sistema de Empreendedorismo Jurídico',
+      en: 'Legal Entrepreneurship System',
+    },
+    description: {
+      pt: 'Sistema com o objetivo de fomentar a inovação e a autonomia dos profissionais do direito.',
+      en: 'System that fosters innovation and autonomy for legal professionals.',
+    },
     technologies: [
       SKILLS_DATA.find((skill) => skill.name === 'HTML5')!,
       SKILLS_DATA.find((skill) => skill.name === 'CSS3')!,
@@ -70,9 +80,14 @@ export const PROJECTS_DATA: ProjectModel[] = [
   {
     id: 2,
     image: 'assets/project2.1.png',
-    title: 'Sistema Municipal de Gestão de Estágio',
-    description:
-      'Sistema para inscrição e gerenciamento de estágios da Prefeitura de Campo Grande, que oferece vagas remuneradas para estudantes de nível profissionalizante, médio e superior.',
+    title: {
+      pt: 'Sistema Municipal de Gestão de Estágio',
+      en: 'Municipal Internship Management System',
+    },
+    description: {
+      pt: 'Sistema para inscrição e gerenciamento de estágios da Prefeitura de Campo Grande, que oferece vagas remuneradas para estudantes de nível profissionalizante, médio e superior.',
+      en: 'System for applying to and managing internships at the Campo Grande City Hall, which offers paid positions for vocational, high school and university students.',
+    },
     technologies: [
       SKILLS_DATA.find((skill) => skill.name === 'HTML5')!,
       SKILLS_DATA.find((skill) => skill.name === 'CSS3')!,
@@ -89,9 +104,14 @@ export const PROJECTS_DATA: ProjectModel[] = [
   {
     id: 3,
     image: 'assets/project3.1.png',
-    title: 'Sistema de Agendamento de Castração',
-    description:
-      'Sistema de agendamento de castração do município de Campo Grande para controle e marcação de procedimentos de castração animal.',
+    title: {
+      pt: 'Sistema de Agendamento de Castração',
+      en: 'Pet Neutering Scheduling System',
+    },
+    description: {
+      pt: 'Sistema de agendamento de castração do município de Campo Grande para controle e marcação de procedimentos de castração animal.',
+      en: 'Scheduling system for the city of Campo Grande to manage and book animal neutering procedures.',
+    },
     technologies: [
       SKILLS_DATA.find((skill) => skill.name === 'HTML5')!,
       SKILLS_DATA.find((skill) => skill.name === 'CSS3')!,
@@ -109,7 +129,10 @@ export const PROJECTS_DATA: ProjectModel[] = [
     id: 4,
     image: 'assets/project4.1.png',
     title: 'Chess Game',
-    description: 'O Chess Game é uma aplicação de xadrez multijogador através do navegador Web.',
+    description: {
+      pt: 'O Chess Game é uma aplicação de xadrez multijogador através do navegador Web.',
+      en: 'Chess Game is a multiplayer chess application played in the web browser.',
+    },
     technologies: [
       SKILLS_DATA.find((skill) => skill.name === 'HTML5')!,
       SKILLS_DATA.find((skill) => skill.name === 'CSS3')!,
@@ -124,8 +147,10 @@ export const PROJECTS_DATA: ProjectModel[] = [
     id: 5,
     image: 'assets/project5.1.png',
     title: 'Nunes Sports',
-    description:
-      'Sistema de gerenciamento de produtos desenvolvido para um desafio técnico, ele permite a exibição, criação, edição e delete de produtos.',
+    description: {
+      pt: 'Sistema de gerenciamento de produtos desenvolvido para um desafio técnico, ele permite a exibição, criação, edição e delete de produtos.',
+      en: 'Product management system built for a technical challenge. It lets you list, create, edit and delete products.',
+    },
     technologies: [
       SKILLS_DATA.find((skill) => skill.name === 'HTML5')!,
       SKILLS_DATA.find((skill) => skill.name === 'CSS3')!,
@@ -143,8 +168,10 @@ export const PROJECTS_DATA: ProjectModel[] = [
     id: 6,
     image: 'assets/project6.1.png',
     title: 'API RESTful - ViaCEP',
-    description:
-      'O projeto é uma API RESTful, que consulta o endereço com base em um CEP fornecido e calcula o frete conforme a região do Brasil.',
+    description: {
+      pt: 'O projeto é uma API RESTful, que consulta o endereço com base em um CEP fornecido e calcula o frete conforme a região do Brasil.',
+      en: 'A RESTful API that looks up an address from a Brazilian postal code (CEP) and calculates shipping based on the region of Brazil.',
+    },
     technologies: [
       SKILLS_DATA.find((skill) => skill.name === 'Java')!,
       SKILLS_DATA.find((skill) => skill.name === 'Spring')!,

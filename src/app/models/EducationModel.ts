@@ -1,8 +1,9 @@
-interface EducationModel {
+import { Localized } from '../i18n/i18n.service';
+
+export interface EducationModel {
   id: number;
-  icon: string;
   institution: string;
-  courseName: string;
-  courseType: string;
-  period: string;
+  courseName: Localized;
+  courseType: Localized;
+  period: Localized;
 }

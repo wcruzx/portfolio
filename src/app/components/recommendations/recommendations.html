@@ -1,19 +1,21 @@
-<section class="recommendations-container">
-  <h1>Recomendações<span class="accent">.</span></h1>
+<section class="recommendations">
+  <div class="container">
+    <h2 class="section-title">{{ i18n.t('recommendations.title') }}<span class="accent">.</span></h2>
 
-  <div class="recommendations-grid">
-    @for (recommendation of recommendations; track recommendation.id) {
-    <div class="recommendation-card">
-      <div class="person-info">
-        <img [src]="recommendation.avatar" [alt]="recommendation.name" class="avatar" />
-        <div class="info">
-          <div class="name">{{ recommendation.name }}</div>
-          <div class="position">{{ recommendation.position }}</div>
-          <div class="relationship">{{ recommendation.relationship }}</div>
-        </div>
-      </div>
-      <p class="description">{{ recommendation.description }}</p>
+    <div class="recommendations-grid">
+      @for (recommendation of recommendations; track recommendation.id) {
+      <figure class="recommendation-card">
+        <blockquote class="description">{{ i18n.pick(recommendation.description) }}</blockquote>
+        <figcaption class="person-info">
+          <img [src]="recommendation.avatar" [alt]="recommendation.name" class="avatar" />
+          <div class="info">
+            <div class="name">{{ recommendation.name }}</div>
+            <div class="detail">{{ i18n.pick(recommendation.position) }}</div>
+            <div class="detail">{{ i18n.pick(recommendation.relationship) }}</div>
+          </div>
+        </figcaption>
+      </figure>
+      }
     </div>
-    }
   </div>
 </section>

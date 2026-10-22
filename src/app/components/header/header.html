@@ -1,19 +1,48 @@
-<div class="navbar">
+<header class="navbar">
   <div class="container-header">
-    <div class="logo">
-      <span> {{ getLogo() }} </span>
+    <a class="logo" href="#home" (click)="scrollToSection($event, 'home')">{{ getLogo() }}</a>
+
+    <div class="lang" role="group" [attr.aria-label]="i18n.t('nav.language')">
+      @for (lang of i18n.languages; track lang) {
+      <button
+        type="button"
+        [attr.lang]="lang"
+        [attr.aria-pressed]="i18n.lang() === lang"
+        (click)="i18n.setLang(lang)"
+      >
+        {{ lang.toUpperCase() }}
+      </button>
+      }
     </div>
-    <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
-      <span class="hamburger"></span>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-controls="main-menu"
+      [attr.aria-expanded]="isMenuOpen()"
+      (click)="toggleMenu()"
+    >
+      {{ isMenuOpen() ? i18n.t('nav.close') : i18n.t('nav.menu') }}
     </button>
-    <div class="menus" [class.active]="isMenuOpen">
+
+    <nav id="main-menu" class="menus" [class.open]="isMenuOpen()" [attr.aria-label]="i18n.t('nav.sections')">
       <ul>
         @for (item of menuItems; track item.id) {
-        <li (click)="scrollToSection(item.target)" [attr.data-target]="item.target">
-          {{ item.label }}
+        <li>
+          <a
+            [href]="'#' + item.target"
+            [class.active]="activeSection() === item.target"
+            [attr.aria-current]="activeSection() === item.target ? 'true' : null"
+            (click)="scrollToSection($event, item.target)"
+          >
+            {{ i18n.t(item.labelKey) }}
+          </a>
         </li>
         }
+        <li>
+          <a class="cv" href="assets/curriculo.pdf" target="_blank" rel="noopener">{{ i18n.t('nav.cv') }}</a>
+        </li>
       </ul>
-    </div>
+    </nav>
   </div>
-</div>
+</header>

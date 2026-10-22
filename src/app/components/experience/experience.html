@@ -1,22 +1,18 @@
-<div class="experience-container" id="experience">
-  <h1>Experiências<span class="accent">.</span></h1>
+<section class="experience" id="experience">
+  <div class="container">
+    <h2 class="section-title">{{ i18n.t('experience.title') }}<span class="accent">.</span></h2>
 
-  <div class="timeline">
-    @for (exp of experiences; track exp.id) {
-    <div class="experience-card">
-      <div class="experience-header">
-        <div class="role-info">
-          <div class="text-info">
-            <div class="job-title">{{ exp.jobTitle }}</div>
-            <div class="company-name">
-              <i class="bi bi-building" style="width: 24px; height: 24px"></i>
-              {{ exp.company }}
-            </div>
-          </div>
+    <ol class="timeline">
+      @for (exp of experiences; track exp.id) {
+      <li [class.current]="exp.current">
+        <div class="period">{{ i18n.pick(exp.period) }}</div>
+        <div class="rail" aria-hidden="true"></div>
+        <div class="details">
+          <h3 class="job-title">{{ exp.jobTitle }}</h3>
+          <div class="company-name">{{ i18n.pick(exp.company) }}</div>
         </div>
-        <div class="period">{{ exp.period }}</div>
-      </div>
-    </div>
-    }
+      </li>
+      }
+    </ol>
   </div>
-</div>
+</section>

@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, DestroyRef, afterNextRender, inject, signal } from '@angular/core';
+import { I18nService } from '../../i18n/i18n.service';
+import { TranslationKey } from '../../i18n/ui-text';
 
 interface MenuItem {
   id: number;
-  label: string;
+  labelKey: TranslationKey;
   target: string;
 }
 
@@ -13,45 +15,49 @@ interface MenuItem {
   styleUrl: './header.scss',
 })
 export class Header {
-  isMenuOpen = false;
+  protected readonly i18n = inject(I18nService);
+  private readonly destroyRef = inject(DestroyRef);
 
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
+  readonly isMenuOpen = signal(false);
+  readonly activeSection = signal('home');
 
-  scrollToSection(target: string) {
-    if (target === 'curriculo') {
-      this.viewCV();
-      return;
-    }
-
-    const element = document.getElementById(target);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      this.isMenuOpen = false;
-    }
-  }
-
-  viewCV() {
-    window.open('assets/curriculo.pdf', '_blank');
-
-    this.isMenuOpen = false;
-  }
-
-  menuItems: MenuItem[] = [
-    { id: 1, label: 'Home', target: 'home' },
-    { id: 2, label: 'Sobre', target: 'about' },
-    { id: 3, label: 'Experiências', target: 'experience' },
-    { id: 4, label: 'Projetos', target: 'projects' },
-    { id: 5, label: 'Contato', target: 'contact' },
-    { id: 6, label: 'Currículo', target: 'curriculo' },
+  readonly menuItems: MenuItem[] = [
+    { id: 1, labelKey: 'nav.home', target: 'home' },
+    { id: 2, labelKey: 'nav.about', target: 'about' },
+    { id: 3, labelKey: 'nav.experience', target: 'experience' },
+    { id: 4, labelKey: 'nav.projects', target: 'projects' },
+    { id: 5, labelKey: 'nav.contact', target: 'contact' },
   ];
 
-  getMenuItems(): MenuItem[] {
-    return this.menuItems;
+  constructor() {
+    // Destaca no menu a seção que está no meio da tela
+    afterNextRender(() => {
+      if (typeof IntersectionObserver === 'undefined') return;
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) this.activeSection.set(entry.target.id);
+          }
+        },
+        { rootMargin: '-45% 0px -50% 0px' },
+      );
+      for (const item of this.menuItems) {
+        const el = document.getElementById(item.target);
+        if (el) observer.observe(el);
+      }
+      this.destroyRef.onDestroy(() => observer.disconnect());
+    });
   }
 
-  specialItems: MenuItem[] = [{ id: 6, label: 'Currículo', target: 'curriculo' }];
+  toggleMenu() {
+    this.isMenuOpen.update((open) => !open);
+  }
+
+  scrollToSection(event: Event, target: string) {
+    event.preventDefault();
+    document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' });
+    this.isMenuOpen.set(false);
+  }
 
   getLogo(): string {
     return '{WC}';

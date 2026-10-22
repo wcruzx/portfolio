@@ -1,96 +1,79 @@
 @use '../../../styles/variables' as *;
+@use '../../../styles/layout' as *;
 
-.recommendations-container {
+.recommendations {
   background-color: $gray-800;
-  padding: 0 12rem 6rem 12rem;
+  @include section;
+}
 
-  h1 {
-    color: $gray-100;
-    font-size: 2.5rem;
-    padding-top: 3rem;
-    margin-bottom: 2rem;
-    text-align: center;
+.container {
+  @include container;
+}
 
-    .accent {
-      color: $primary;
-    }
-    @media screen and (max-width: 768px) {
-      font-size: 2.3rem;
-    }
+.section-title {
+  @include section-title;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+
+  @media screen and (max-width: 760px) {
+    grid-template-columns: 1fr;
   }
+}
 
-  .recommendations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+.recommendation-card {
+  margin: 0;
+  padding: 28px;
+  border-radius: 10px;
+  background: $gray-900;
+  display: grid;
+  gap: 20px;
+}
+
+// Aspas grandes como elemento gráfico; texto sem itálico para ler melhor
+.description {
+  position: relative;
+  margin: 0;
+  padding-top: 28px;
+  color: $gray-200;
+  line-height: 1.6;
+
+  &::before {
+    content: '\201C';
+    position: absolute;
+    top: -14px;
+    left: -4px;
+    font: 700 4rem/1 Georgia, serif;
+    color: $primary;
   }
+}
 
-  .recommendation-card {
-    background: rgba($gray-900, 0.5);
-    border-radius: 8px;
-    padding: 1.5rem;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba($gray-700, 0.3);
-    transition: all 0.3s ease;
+.person-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid $primary;
+  flex-shrink: 0;
+}
 
-    .person-info {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
+.name {
+  font-weight: 600;
+  color: $gray-100;
+}
 
-      .avatar {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-right: 1rem;
-        border: 2px solid $primary;
-      }
-
-      .info {
-        .name {
-          font-size: 1.2rem;
-          font-weight: 600;
-          color: $gray-100;
-        }
-
-        .position,
-        .relationship {
-          font-size: 0.9rem;
-          color: $gray-400;
-        }
-      }
-    }
-
-    .description {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: $gray-300;
-      font-style: italic;
-
-      &::before {
-        content: '"';
-        font-size: 2rem;
-        color: $primary;
-        line-height: 0;
-        margin-right: 0.5rem;
-      }
-
-      &::after {
-        content: '"';
-        font-size: 2rem;
-        color: $primary;
-        line-height: 0;
-        margin-left: 0.5rem;
-      }
-    }
-  }
-  @media screen and (max-width: 768px) {
-    padding: 0 2rem 3rem 2rem;
-  }
+.detail {
+  font-size: 14px;
+  line-height: 1.45;
+  color: $gray-300;
 }

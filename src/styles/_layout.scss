@@ -1,0 +1,48 @@
+@use 'variables' as *;
+
+// Contêiner único usado por todas as seções (exceto o hero)
+@mixin container($max: $container-width) {
+  max-width: $max;
+  margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+
+@mixin section {
+  padding-block: 88px;
+
+  @media screen and (max-width: 768px) {
+    padding-block: 64px;
+  }
+}
+
+// Título de seção: mono, alinhado à esquerda, com o ponto verde da marca
+@mixin section-title {
+  font: 700 2rem/1.2 $font-mono;
+  color: $gray-100;
+  margin: 0 0 40px;
+  letter-spacing: -0.01em;
+  text-align: left;
+
+  .accent {
+    color: $primary;
+  }
+}
+
+// Etiqueta de tecnologia com ícone
+@mixin chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 13px $font-mono;
+  color: $gray-200;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: rgba($primary, 0.08);
+  border: 1px solid rgba($primary, 0.22);
+
+  img {
+    width: 15px;
+    height: 15px;
+  }
+}
