@@ -13,6 +13,13 @@ export class Education {
 
   educationList: EducationModel[] = [
     {
+      id: 4,
+      institution: 'UNIPDS',
+      courseName: { pt: 'Engenharia de IA Aplicada', en: 'Applied AI Engineering' },
+      courseType: { pt: 'Pós Graduação', en: 'Postgraduate' },
+      period: { pt: 'Julho 2026 - Atualmente', en: 'July 2026 - Present' },
+    },
+    {
       id: 1,
       institution: 'Anhanguera Educacional',
       courseName: { pt: 'Arquitetura de Microsserviços', en: 'Microservices Architecture' },
