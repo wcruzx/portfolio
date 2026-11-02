@@ -59,7 +59,7 @@ a.contact-item:hover {
   padding: 32px;
   border-radius: 12px;
   background: $gray-900;
-  border: 1px solid $gray-700;
+  border: 1px solid rgba($gray-700, 0.5);
 
   @media (max-width: 820px) {
     padding: 24px;

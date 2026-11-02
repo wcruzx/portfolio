@@ -75,120 +75,191 @@
   }
 }
 
-.hello.terminal {
-  background-color: $gray-800;
+// Cores do tema escuro do IntelliJ IDEA (New UI)
+$ij-panel: #2b2d30;
+$ij-console: #1e1f22;
+$ij-border: #393b40;
+$ij-text: #bcbec4;
+$ij-muted: #868a91;
+$ij-blue: #3574f0;
+$ij-ansi-blue: #56a8f5;
+$ij-warn: #e0bb65;
+
+// Tamanho do comando ".\mvnw spring-boot:run"
+$cmd-length: 22;
+
+.ij-terminal {
+  background-color: $ij-console;
+  border: 1px solid $ij-border;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   width: 600px;
   max-width: 100%;
   flex-shrink: 0;
   overflow: hidden;
-  font-family: 'Consolas', monospace;
+  font-family: $font-mono;
+  color: $ij-text;
 
   @media screen and (max-width: 768px) {
     width: 100%;
   }
 
-  .terminal-bar {
-    background-color: $gray-700;
-    padding: 10px;
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+}
+
+// Barra superior: "Terminal" + aba "Local"
+.ij-header {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  height: 36px;
+  padding: 0 10px 0 14px;
+  background-color: $ij-panel;
+  border-bottom: 1px solid $ij-border;
+  font-family: $font-sans;
+  font-size: 13px;
+
+  .ij-label {
     display: flex;
     align-items: center;
+    font-weight: 600;
+  }
 
-    .terminal-buttons {
-      display: flex;
-      gap: 8px;
-      margin-right: 16px;
+  .ij-tab {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 8px;
+    box-shadow: inset 0 -2px 0 $ij-blue;
 
-      .terminal-button {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-
-        &.close {
-          background-color: #ff5f56;
-        }
-        &.minimize {
-          background-color: #ffbd2e;
-        }
-        &.zoom {
-          background-color: #27c93f;
-        }
-      }
-    }
-
-    .terminal-title {
-      color: $gray-300;
-      font-size: 14px;
+    .tab-icon {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      color: $ij-muted;
     }
   }
 
-  .terminal-window {
-    color: $gray-200;
-    padding: 20px;
-    min-height: 300px;
-    font-size: 14px;
-    line-height: 1.6;
+  .tab-close,
+  .tab-add {
     display: flex;
-    flex-direction: column;
-    overflow-x: auto;
+    align-items: center;
+    color: $ij-muted;
+    font-size: 15px;
+    line-height: 1;
+  }
 
-    @media screen and (max-width: 768px) {
-      font-size: 11.5px;
-      padding: 16px;
-    }
+  .ij-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    color: $ij-muted;
+  }
+}
 
-    .line {
-      margin: 0;
-      white-space: pre;
-      font-family: inherit;
-      min-height: 1.6em;
-    }
+.console {
+  min-height: 300px;
+  padding: 12px 16px;
+  font-size: 13px;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
 
-    .prompt-sign {
-      color: $primary;
-    }
+  @media screen and (max-width: 768px) {
+    font-size: 11px;
+    padding: 12px;
+  }
 
-    .highlight {
-      color: $primary-light;
-    }
+  .line {
+    margin: 0;
+    white-space: pre;
+    font-family: inherit;
+    min-height: 1.6em;
+  }
 
-    .level {
-      color: $primary-light;
-    }
+  .prompt {
+    color: $ij-text;
+  }
 
-    .muted {
-      color: $gray-400;
-    }
+  // Comando digitado: a largura cresce de 0 até o tamanho do comando, uma letra por passo
+  .typing {
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    width: calc(#{$cmd-length} * 1ch);
+    border-right: 2px solid transparent;
+  }
 
-    .banner {
-      color: $primary;
-      line-height: 1.25;
-      font-size: 0.92em;
-    }
+  // Antes de digitar: só o cursor piscando no prompt
+  &[data-phase='idle'] .typing {
+    width: 0;
+    animation: caret-blink 1s step-end infinite;
+  }
 
-    .success {
-      color: $primary;
-      font-weight: 700;
-    }
+  &[data-phase='typing'] .typing {
+    border-right-color: $ij-text;
+    animation: typing 1.6s steps($cmd-length, end) 0.5s both;
+  }
 
-    // Comando digitado: a largura vai de 0 até 22ch (tamanho de "./mvnw spring-boot:run")
-    .typing {
-      --n: 22;
-      display: inline-block;
-      overflow: hidden;
-      vertical-align: bottom;
-      width: calc(var(--n) * 1ch);
-      border-right: 2px solid transparent;
-      animation:
-        typing 1s steps(22, end) 0.5s both,
-        typing-caret 1s step-end 0.5s;
-    }
+  .mvn {
+    color: $ij-text;
 
-    // Saídas aparecem em sequência; cada linha define seu atraso em --d no HTML
-    .out {
-      animation: appear 0.01s linear var(--d, 0s) both;
+    b {
+      color: $ij-ansi-blue;
     }
+  }
+
+  .plugin {
+    color: $primary;
+  }
+
+  .banner {
+    color: $primary;
+    line-height: 1.25;
+    font-size: 0.92em;
+  }
+
+  .highlight {
+    color: $primary-light;
+  }
+
+  .info {
+    color: $primary;
+  }
+
+  .warn {
+    color: $ij-warn;
+  }
+
+  .success {
+    color: $primary;
+    font-weight: 700;
+  }
+
+  // Cursor do terminal piscando depois do último log
+  .caret {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    vertical-align: text-bottom;
+    background-color: $ij-text;
+    animation: blink 1s step-end infinite;
+  }
+
+  // Saídas aparecem em sequência; cada linha define seu atraso em --d no HTML
+  .out {
+    animation: appear 0.01s linear var(--d, 0s) both;
+  }
+
+  // Visita repetida ou movimento reduzido: tudo já aparece pronto
+  &.static .out {
+    animation: none;
   }
 }
 
@@ -198,10 +269,9 @@
   }
 }
 
-@keyframes typing-caret {
-  0%,
-  99% {
-    border-right-color: $primary;
+@keyframes caret-blink {
+  50% {
+    border-right-color: $ij-text;
   }
 }
 
@@ -211,11 +281,14 @@
   }
 }
 
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .hello.terminal .terminal-window {
-    .typing,
-    .out {
-      animation: none;
-    }
+  .ij-terminal .caret {
+    animation: none;
   }
 }
