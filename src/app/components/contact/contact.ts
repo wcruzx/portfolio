@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { TypingTitleDirective } from '../shared/typing-title.directive';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ContactModel, CONTACT_INFO } from '../../models/ContactModel';
@@ -12,7 +13,7 @@ import { I18nService } from '../../i18n/i18n.service';
   templateUrl: './contact.html',
   styleUrls: ['./contact.scss'],
   standalone: true,
-  imports: [FormsModule, CommonModule, AlertComponent],
+  imports: [TypingTitleDirective, FormsModule, CommonModule, AlertComponent],
 })
 export class ContactComponent {
   protected readonly i18n = inject(I18nService);

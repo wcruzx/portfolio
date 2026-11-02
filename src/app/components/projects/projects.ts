@@ -1,9 +1,11 @@
 import { Component, inject } from '@angular/core';
+import { TypingTitleDirective } from '../shared/typing-title.directive';
 import { ProjectModel, PROJECTS_DATA } from '../../models/ProjectModel';
 import { I18nService } from '../../i18n/i18n.service';
 
 @Component({
   selector: 'app-projects',
+  imports: [TypingTitleDirective],
   templateUrl: './projects.html',
   styleUrls: ['./projects.scss'],
   standalone: true,

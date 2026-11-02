@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
+import { TypingTitleDirective } from '../shared/typing-title.directive';
 import { EducationModel } from '../../models/EducationModel';
 import { I18nService } from '../../i18n/i18n.service';
 
 @Component({
   selector: 'app-education',
-  imports: [],
+  imports: [TypingTitleDirective],
   templateUrl: './education.html',
   styleUrl: './education.scss',
 })

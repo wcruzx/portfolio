@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { TypingTitleDirective } from '../shared/typing-title.directive';
 import { SkillModel, SKILLS_DATA } from '../../models/SkillsModel';
 import { I18nService } from '../../i18n/i18n.service';
 import { TranslationKey } from '../../i18n/ui-text';
@@ -18,6 +19,7 @@ const GROUPS: { labelKey: TranslationKey; categories: string[] }[] = [
 
 @Component({
   selector: 'app-skills',
+  imports: [TypingTitleDirective],
   templateUrl: './skills.html',
   styleUrls: ['./skills.scss'],
   standalone: true,

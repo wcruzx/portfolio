@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
+import { TypingTitleDirective } from '../shared/typing-title.directive';
 import { ExperienceModel } from '../../models/ExperienceModel';
 import { I18nService } from '../../i18n/i18n.service';
 
 @Component({
   selector: 'app-experience',
-  imports: [],
+  imports: [TypingTitleDirective],
   templateUrl: './experience.html',
   styleUrl: './experience.scss',
 })
